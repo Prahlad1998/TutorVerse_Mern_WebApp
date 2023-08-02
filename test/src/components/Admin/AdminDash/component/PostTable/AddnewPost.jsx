@@ -19,7 +19,7 @@ import { DataContext } from "../../../../../context/dataContext";
 
 const AddNewPost = () => {
   const navigate = useNavigate();
-  const {allposts,allstudents}=useContext(DataContext);
+  const {allstudents}=useContext(DataContext);
   const [isRegister, setIsRegister] = useState(true);
   const [isCheckOver,setIsCheckOver]=useState(false);
   const [userEmail, setUserEmail] = useState("");

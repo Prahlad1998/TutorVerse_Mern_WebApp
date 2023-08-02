@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Grid,
   Box,
@@ -10,10 +10,9 @@ import {
   ListItemText,
 } from "@mui/material";
 import CommitRoundedIcon from "@mui/icons-material/CommitRounded";
-// import CreateRoundedIcon from '@mui/icons-material/CreateRounded';
+
 import CreatePost from "./CreatePost";
 import AccessibleTable from "./TablePost";
-import axios from "axios";
 
 const HomeStudentDash = (props) => {
   console.log(props);

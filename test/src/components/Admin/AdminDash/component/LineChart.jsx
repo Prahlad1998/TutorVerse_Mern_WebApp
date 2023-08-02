@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Line, Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -9,7 +9,6 @@ import {
 } from "chart.js";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { DataContext } from "../../../../context/dataContext";
-import { display } from "@mui/system";
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 const LineChart = () => {

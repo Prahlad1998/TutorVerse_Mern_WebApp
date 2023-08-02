@@ -28,17 +28,6 @@ export default function EditDialogPost() {
   const handleClose = () => {
     setOpen(false);
   };
-  const handleEdit = async () => {
-    const response = await axios.delete(`/users/${rowId}`);
-    console.log(response);
-    if (!response.data.status === "ok") {
-      toast.error(response.data.message);
-    } else {
-      handleClose();
-      toast.success(response.data.message);
-    }
-    setTimeout(() => navigate(0), 2000);
-  };
 
   return (
     <div>

@@ -19,7 +19,6 @@ import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import {useNavigate} from 'react-router-dom';
-import { DotLoader } from "react-spinners";
 
 const AccountDash = (props) => {
   // const [isloader,setLoader]=useState(false);

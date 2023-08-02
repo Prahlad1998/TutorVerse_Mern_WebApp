@@ -9,7 +9,6 @@ import {
   ListItemIcon,
   ListItemText,
   Chip,
-  Avatar,
   FormControl,
   InputLabel,
   MenuItem,
@@ -18,10 +17,6 @@ import {
 import {DotLoader} from 'react-spinners';
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import SubjectIcon from "@mui/icons-material/Subject";
-import ManRoundedIcon from "@mui/icons-material/ManRounded";
-import WomanRoundedIcon from "@mui/icons-material/WomanRounded";
-import LanguageRoundedIcon from "@mui/icons-material/LanguageRounded";
-import InterpreterModeRoundedIcon from "@mui/icons-material/InterpreterModeRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import TutorCard from "./tutorCard";
 import axios from "axios";

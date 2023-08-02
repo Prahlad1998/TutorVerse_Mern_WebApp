@@ -8,7 +8,6 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Paper,
 } from "@mui/material";
 import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
 import MailRoundedIcon from "@mui/icons-material/MailRounded";
@@ -21,7 +20,6 @@ import LabelImportantRoundedIcon from '@mui/icons-material/LabelImportantRounded
 
 const Account = (props) => {
   const {body}=useContext(DataContext);
-  const { data } = props;
   return (
     <>
       <CssBaseline>

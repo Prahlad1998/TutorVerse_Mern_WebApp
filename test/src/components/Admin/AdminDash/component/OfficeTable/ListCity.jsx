@@ -2,7 +2,7 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { DataContext } from "../../../../../context/dataContext";
-import { ListItem, ListItemText, Button } from "@mui/material";
+import { ListItem, ListItemText } from "@mui/material";
 import DeleteCityDialog from "./deleteCityDialog";
 
 export default function ListCity() {
