@@ -109,7 +109,7 @@ const AddNewTutor = () => {
       console.log("Something Error !", err);
     }
   };
-  const City = ["Guwahati", "Kaziranga", "Bokakhat", "Kaliabor", "Tezpur"];
+  
   return (
     <>
       <form

@@ -8,7 +8,7 @@ import {
 import { Button, Grid, Typography } from "@mui/material";
 import AddNewTutor from "./component/TutorsTable/AddNewTutor";
 import AddIcon from "@mui/icons-material/Add";
-import AddNewStudent from "./component/AddNewStudent";
+
 import DataTutorTable from "./component/TutorsTable/DataTutorTable";
 
 const Students = () => {
@@ -75,10 +75,6 @@ const Students = () => {
 
       <Grid container spacing={2} style={{ marginTop: 20, padding: 30 }}>
         <Grid item xs={12} md={12} lg={12}>
-          {/* <div style={{marginBottom:30}}>
-          {addNewTutorScreen?<><Typography variant="p" color='#EF6262'>* Before filling up the form,Make sure the Email and Contact no are correct and valid.
-            </Typography></>:''}
-          </div> */}
           
           <Routes>
             <Route exact path="/" element={<DataTutorTable />} />

@@ -7,16 +7,9 @@ const Viewdetails = () => {
   const { allstudents } = useContext(DataContext);
   const { rowId } = useContext(userContext);
   const matchStudent = allstudents.find(({ _id }) => _id === rowId);
-  const Personal = ["name", "email", "contactno", "gender"];
+  
   let verifyStatus=matchStudent.verified?'Verified':'Not verified'
-  // let matchStudent = Object.values(allstudents).find((student,i) => {
-  //   let indexOfObj;
-  //   if(student._id===rowId){
-  //     indexOfObj=i;
-  //   }
-  //   return indexOfObj;
-  //   // student._id === rowId) ? student : null;
-  // });
+
   console.log(matchStudent);
   return (
     <>
@@ -109,7 +102,6 @@ const Viewdetails = () => {
             <Typography marginLeft={3}>{verifyStatus}</Typography>
           </Stack>
           </Grid>
-          
       </Grid>
     </>
   );

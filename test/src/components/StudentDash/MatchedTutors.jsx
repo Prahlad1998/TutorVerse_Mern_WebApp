@@ -38,7 +38,7 @@ const MatchedTutors = (props) => {
   FinalSubjects = removedDuplicates(subjects);
   const [tutors, setTutors] = useState({});
   const [isloading,setLoading]=useState(true);
-  const [issearchloading,setSearchloading]=useState(false);
+ 
   const findMatchedTutors = async () => {
     try {
       console.log("Inside Try Block", axioslocality, FinalSubjects);
@@ -82,7 +82,7 @@ const MatchedTutors = (props) => {
   });
   const [manualSearchedTutor,setManualSearchedTutor]=useState({});
   const handleTutorManualSearch = async () => {
-    setSearchloading(true);
+   
     const { city, subjects } = manualTutorSearch;
     if (city === "" || subjects === "") {
       return toast.error("Please filled up the required filled");
@@ -96,7 +96,7 @@ const MatchedTutors = (props) => {
       console.log(response);
       let arraylength=(response.data.data).length;
       if(arraylength===0){
-        setSearchloading(false);
+        
         return toast.error('No data Found');
         
       }
@@ -105,7 +105,7 @@ const MatchedTutors = (props) => {
         
         toast.success(`Got ${arraylength
       } numbers of tutors`);
-      setSearchloading(false);
+      
       }
      
     } catch (error) {

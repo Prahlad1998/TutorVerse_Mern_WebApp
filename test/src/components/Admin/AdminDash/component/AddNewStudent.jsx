@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, {useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
   Typography,
  
 } from "@mui/material";
-import { DataContext } from "../../../../context/dataContext";
+
 
 const AddNewStudent = () => {
   const navigate = useNavigate();

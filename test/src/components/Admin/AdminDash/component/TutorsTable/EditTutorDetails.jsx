@@ -9,7 +9,7 @@ import {useNavigate} from 'react-router-dom';
 
 const EditDetails = () => {
     const navigate=useNavigate()
-    const[isReady,setIsReady]=useState(false);
+    
 const { rowId } = React.useContext(tutorContext);
 const {alltutors,city,highestqualification,subjects}=React.useContext(DataContext);
 const matchTutor = alltutors.find(({ _id }) => _id === rowId);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+
 import {
   TextField,
   Button,
@@ -20,7 +20,7 @@ import OtpForm from "../components/studentregister/otpForm";
 import Navbar from "../components/Navbar";
 
 const Register = () => {
-  const navigate = useNavigate();
+
   const [isOtp, setIsOtp] = useState(false);
   const [data, setData] = useState({
     name: "",
