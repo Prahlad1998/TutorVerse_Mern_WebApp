@@ -15,17 +15,17 @@ const sendOTPmiddleware = async (req, res, next) => {
     const OTP = generateOTP();
 
     let transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      secure: true,
       auth: {
-        user: "brady.emard@ethereal.email",
-        pass: "S7r4hPedT1zRDaTunX",
+        user: process.env.SMTP_MAIL,
+        pass: process.env.SMTP_PASS,
       },
     });
     transporter.sendMail(
       {
-        from: 'Prahlad 👻" <prahladbora2016@gmail.com>', // sender address
+        from: 'development.pb2023@gmail.com', // sender address
         to: `${email}`, // list of receivers
         subject: "Hello ,This email is for verify OTP", // Subject line
         text: `Hello User! Your One Time Password is  ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
