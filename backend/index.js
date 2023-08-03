@@ -20,7 +20,7 @@ app.use((req,res,next)=>{
 app.use('/', require('./routes/authRoute'))
 
 
-const port=5383;
+const port=process.env.PORT;
 app.listen(port,()=>{
     console.log(`App is running at ${port}`);
 });

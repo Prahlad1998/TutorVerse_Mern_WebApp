@@ -120,6 +120,10 @@ router.delete("/sub/:id", deleteSub);
 router.delete("/stand/:id", deleteStand);
 
 router.all("*", (req, res, next) => {
+  res.json({
+    status:'fail',
+    message:'not a valid Path'
+  })
   next();
 });
 module.exports = router;

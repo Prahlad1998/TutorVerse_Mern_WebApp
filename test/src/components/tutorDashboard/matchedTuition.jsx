@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import TuitionCard from "./TuitionCard";
 import { DataContext } from "../../context/dataContext";
-import { Grid, Typography, Strong } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import axios from "axios";
 import { PropagateLoader } from "react-spinners";
 
@@ -31,7 +31,7 @@ const MatchedTuition = () => {
   };
   useEffect(() => {
     setTuitions(() => findTuitions());
-  }, []);
+  },[]);
 
   return (
     <>
