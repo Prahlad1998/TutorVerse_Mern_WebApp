@@ -17,7 +17,8 @@ const sendOTPmiddleware = async (req, res, next) => {
     let transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
-      secure: true,
+      secure: false,
+      requireTLS:true,
       auth: {
         user: process.env.SMTP_MAIL,
         pass: process.env.SMTP_PASS,
@@ -72,7 +73,8 @@ const sendOTPmiddlewareStudent = async (req, res, next) => {
     let transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
-      secure: true,
+      secure: false,
+      requireTLS:true,
       auth: {
         user: process.env.SMTP_MAIL,
         pass: process.env.SMTP_PASS,
