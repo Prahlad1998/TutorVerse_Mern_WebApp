@@ -5,17 +5,16 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import { useNavigate } from "react-router-dom";
+
 import { postContext } from "../../context/postContext";
 import DialogTitle from "@mui/material/DialogTitle";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
-import axios from "axios";
-import { toast } from "react-hot-toast";
+
 import EditDetailsPost from "./EditDetailsPost";
 
 export default function EditDialogPost() {
   const { rowId } = React.useContext(postContext);
-  const navigate = useNavigate();
+ 
 
   console.log(rowId);
 
