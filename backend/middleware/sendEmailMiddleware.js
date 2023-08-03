@@ -27,7 +27,7 @@ const sendOTPmiddleware = async (req, res, next) => {
     transporter.sendMail(
       {
         from: 'development.pb2023@gmail.com', // sender address
-        to: `${email}`, // list of receivers
+        to:email, // list of receivers
         subject: "Hello ,This email is for verify OTP", // Subject line
         text: `Hello User! Your One Time Password is  ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
         // html: "<b>Hello world?</b>", // html body
@@ -83,7 +83,7 @@ const sendOTPmiddlewareStudent = async (req, res, next) => {
     transporter.sendMail(
       {
         from: 'development.pb2023@gmail.com', // sender address
-        to: `${email}`, // list of receivers
+        to: email, // list of receivers
         subject: "Hello ,This email is for verify OTP", // Subject line
         text: `Hello User! Your One Time Password is \n ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
         // html: "<b>Hello world?</b>", // html body
