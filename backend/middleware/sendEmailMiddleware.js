@@ -70,23 +70,41 @@ const sendOTPmiddlewareStudent = async (req, res, next) => {
     
     const OTP = generateOTP();
 
+    // let transporter = nodemailer.createTransport({
+    //   host: "smtp.ethereal.email",
+    //   port: 587,
+    //   secure: false,
+    //   auth: {
+    //     user: "brady.emard@ethereal.email",
+    //     pass: "S7r4hPedT1zRDaTunX",
+    //   },
+    // });
     let transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: false,
       auth: {
-        user: "brady.emard@ethereal.email",
-        pass: "S7r4hPedT1zRDaTunX",
+        user: process.env.SMTP_MAIL,
+        pass: process.env.SMTP_PASS,
       },
     });
+    // transporter.sendMail(
+      // {
+      //   from: 'brady.emard@ethereal.email', // sender address
+      //   to: `${email}`, // list of receivers
+      //   subject: "Hello ,This email is for verify OTP", // Subject line
+      //   text: `Hello User! Your One Time Password is  ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
+      //   // html: "<b>Hello world?</b>", // html body
+      // },
     transporter.sendMail(
       {
-        from: 'Prahlad 👻<prahladbora2016@gmail.com>', // sender address
+        from: 'development.pb2023@gmail.com', // sender address
         to: `${email}`, // list of receivers
         subject: "Hello ,This email is for verify OTP", // Subject line
-        text: `Hello User! Your One Time Password is  ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
+        text: `Hello User! Your One Time Password is \n ${OTP}.\n This OTP will valid only for 1 min.`, // plain text body
         // html: "<b>Hello world?</b>", // html body
       },
+
       function (error, info) {
         if (error) {
         console.log(error);
