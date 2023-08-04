@@ -9,6 +9,7 @@ const MatchedTuition = () => {
   const { body } = useContext(DataContext);
   const [tuitions, setTuitions] = useState({});
   const [isloading, setIsloading] = useState(true);
+  
   const findTuitions = async () => {
     if (body.city === "" || body.subjects === "") {
       return false;
@@ -29,8 +30,13 @@ const MatchedTuition = () => {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    setTuitions(() => findTuitions());
+    
+      setTuitions(() => findTuitions());
+    
+    
+  
   },[]);
 
   return (

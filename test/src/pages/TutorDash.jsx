@@ -1,18 +1,26 @@
 import axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useRef  } from "react";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../context/dataContext";
 
 import ResponsiveDrawer from "../components/tutorDashboard/drawer";
+
+
+
+
 const TutorDash = () => {
   const navigate = useNavigate();
   const [body, setBody] = useState({});
+  const tempFunc=useRef(); 
+
+ 
   const fetch = async () => {
     try {
       const responds = await axios.post("/userdetails", {
         token: window.localStorage.getItem("token"),
       });
+      
       console.log(responds);
       if (responds.data.status === "fail") {
         navigate("/login");
@@ -24,10 +32,12 @@ const TutorDash = () => {
       console.log("Error occured", error);
     }
   };
+  tempFunc.current=fetch;
+ 
   useEffect(() => {
-    setBody(() => fetch());
-  }, []);
-// console.log(usecity,usesubjects);
+    tempFunc.current();
+    // setBody(() => fetch());
+  },[]);
   
   return (
     <>
