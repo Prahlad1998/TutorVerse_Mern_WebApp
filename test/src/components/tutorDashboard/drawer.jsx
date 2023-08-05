@@ -28,6 +28,7 @@ import Account from "./account";
 import { toast } from "react-hot-toast";
 
 
+
 const drawerWidth = 240;
 
 
@@ -41,14 +42,23 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
   const Navigate=useNavigate();
+  console.log(location.pathname);
+  let pathnameArray = location.pathname.split("/").slice(1);
+  // let paths = pathnameArray.map((curr, i, array) => {
+  //   return array[i - 1] ? `/${array[i - 1]}/${array[i]}` : `/${array[i]}`;
+  // });
 
   const drawer = (
     <div >
-      <Toolbar />
+      <Toolbar>
+        <Typography variant="h6">
+          TutorVerse
+        </Typography>
+      </Toolbar>
       <Divider />
       <List>
-        <ListItem disablePadding onClick={()=>Navigate("/tutordash")}>
-          <ListItemButton selected={location.pathname==='/tutordash'?true:false}>
+        <ListItem disablePadding onClick={()=>Navigate("")}>
+          <ListItemButton selected={pathnameArray[1]='tutordash'?true:false}>
             <ListItemIcon>
               <HomeRoundedIcon />
             </ListItemIcon>
@@ -57,7 +67,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
 
         <ListItem disablePadding onClick={()=>Navigate("leaderboard")}>
-          <ListItemButton selected={location.pathname==='/tutordash/leaderboard'?true:false}>
+          <ListItemButton selected={pathnameArray[1]==='leaderboard'?true:false}>
             <ListItemIcon>
               <LeaderboardRoundedIcon/>
             </ListItemIcon>
@@ -66,7 +76,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
 
         <ListItem disablePadding onClick={()=>Navigate("matchedtuitions")}>
-          <ListItemButton selected={location.pathname==='/tutordash/matchedtuitions'?true:false}>
+          <ListItemButton selected={pathnameArray[1]==='matchedtuitions'?true:false}>
             <ListItemIcon>
               <JoinInnerRoundedIcon />
             </ListItemIcon>
@@ -75,7 +85,7 @@ function ResponsiveDrawer(props) {
         </ListItem>
 
         <ListItem disablePadding onClick={()=>Navigate("account")}>
-          <ListItemButton selected={location.pathname==='/tutordash/account'?true:false}>
+          <ListItemButton selected={pathnameArray[1]==='account'?true:false}>
             <ListItemIcon>
               <PersonRoundedIcon  />
             </ListItemIcon>
@@ -128,6 +138,7 @@ const logOut = () => {
           <Typography variant="h6" noWrap component="div">
             Tutor Dashboard
           </Typography>
+          {/* <Typography>{paths}</Typography> */}
           <Button varient="outlined" style={{color:'#DAFFFB'}} onClick={logOut}><LogoutIcon/>LogOut</Button>
           
         </Toolbar>
