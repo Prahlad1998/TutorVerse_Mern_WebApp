@@ -59,7 +59,8 @@ const { createStand, deleteStand } = require("../controller/Modify/standardContr
 router.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3000",
+    origin:"https://main--vocal-banoffee-f58c54.netlify.app",
+    // origin: "http://localhost:3000",
   })
 );
 //get request
