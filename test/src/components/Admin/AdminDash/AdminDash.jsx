@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
@@ -15,6 +15,7 @@ const AdminDash = () => {
   const [allCity,setAllCity]=useState([]);
   const [allSub,setAllSub]=useState([]);
   const [allStand,setAllStand]=useState([]);
+  const tempFunc=useRef(); 
 
   const navigate = useNavigate();
   const [highestqualification, setHighestqualification] = useState([
@@ -98,6 +99,7 @@ const AdminDash = () => {
       setLoading(false);
     }
   };
+  tempFunc.current=fetchAdmin;
   const getAllcities = async () => {
     try {
       const response = await axios.get("/getallCities");
@@ -134,7 +136,8 @@ const AdminDash = () => {
     }
   };
   useEffect(() => {
-    setUsername(() => fetchAdmin());
+    tempFunc.current();
+    // setUsername(() => fetchAdmin());
   }, []);
   useEffect(() => {
     setAllstudents(() => getAllstudents());
