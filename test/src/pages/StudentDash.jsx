@@ -1,4 +1,4 @@
-import React ,{ useState, useEffect }  from "react";
+import React ,{ useState, useEffect,useRef }  from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ResponsiveDrawerStudent from "../components/StudentDash/DrawerStudent";
@@ -8,6 +8,7 @@ const StudentDash = () => {
   const navigate = useNavigate();
   const [body, setBody] = useState({});
   const [posts, setPosts] = useState([]);
+  const tempFunc=useRef(); 
 
 
   const fetch = async () => {
@@ -26,7 +27,7 @@ const StudentDash = () => {
       console.log("Error occured", error);
     }
   };
-  
+  tempFunc.current=fetch;
   const fetchPosts = async() => {
     try {
       const response = await axios.post("/postdetails", {
@@ -46,7 +47,8 @@ const StudentDash = () => {
     setPosts(()=>fetchPosts()) ;
   },[posts.createdat]);
   useEffect(() => {
-    setBody(() => fetch());
+    tempFunc.current();
+    // setBody(() => fetch());
   }, []);
   return (
     <>

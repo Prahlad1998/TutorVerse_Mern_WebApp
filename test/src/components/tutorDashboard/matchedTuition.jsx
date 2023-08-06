@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext,useRef } from "react";
 import TuitionCard from "./TuitionCard";
 import { DataContext } from "../../context/dataContext";
 import { Grid, Typography } from "@mui/material";
@@ -9,6 +9,7 @@ const MatchedTuition = () => {
   const { body } = useContext(DataContext);
   const [tuitions, setTuitions] = useState({});
   const [isloading, setIsloading] = useState(true);
+  const temFunc=useRef();
   
   const findTuitions = async () => {
     if (body.city === "" || body.subjects === "") {
@@ -30,12 +31,12 @@ const MatchedTuition = () => {
       console.log(error);
     }
   };
+  temFunc.current=MatchedTuition;
 
   useEffect(() => {
+    temFunc.current();
     
-      setTuitions(() => findTuitions());
-    
-    
+      // setTuitions(() => findTuitions());
   
   },[]);
 
