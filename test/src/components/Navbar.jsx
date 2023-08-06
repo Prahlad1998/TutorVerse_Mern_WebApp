@@ -69,6 +69,22 @@ const Navbar = () => {
           Join as Tutor
         </Link>
       </Button>
+      <Button
+        variant="contained"
+        style={{
+          margin: 10,
+        }}
+      >
+        <Link
+          to="/adminlogin"
+          style={{
+            textDecoration: "none",
+            color: "white",
+          }}
+        >
+          Admin Login
+        </Link>
+      </Button>
     </nav>
   );
 };
