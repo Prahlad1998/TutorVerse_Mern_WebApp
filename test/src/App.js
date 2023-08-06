@@ -35,7 +35,9 @@ import AddnewPost from "./components/Admin/AdminDash/component/PostTable/AddnewP
 import FilterTable from "./components/Admin/AdminDash/component/PostTable/FilterTable";
 import PostDetailsFromStudent from "./components/Admin/AdminDash/component/StudentsTable/PostDetailsFromStudent";
 
-axios.defaults.baseURL = "http://localhost:5383";
+// axios.defaults.baseURL = "http://localhost:5383";
+axios.defaults.baseURL = "https://tutorverse-backend.onrender.com";
+// https://tutorverse-backend.onrender.com/getallposts
 axios.defaults.withCredentials = true;
 
 function App() {
