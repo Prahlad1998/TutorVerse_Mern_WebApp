@@ -60,7 +60,7 @@ const FilterTable = () => {
   const [filterSubject, setFilterSubject] = useState("");
   const [filterStandard, setFilterstandard] = useState("");
   const [finalfilteredpost,setFinalFilteredpost]=useState({});
-  const { allposts, city, standard, subjects } = useContext(DataContext);
+  const { allposts, city, standards, subjects } = useContext(DataContext);
 
 
   const getDateOfCreation = (str) => {
@@ -148,7 +148,7 @@ const FilterTable = () => {
               }}
             >
               <MenuItem value="">None</MenuItem>
-              {standard.map((e) => (
+              {standards.map((e) => (
                 <MenuItem value={e}>{e}</MenuItem>
               ))}
             </Select>
