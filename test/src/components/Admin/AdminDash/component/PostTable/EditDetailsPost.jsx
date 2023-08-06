@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 const EditDetailsPost = () => {
   const navigate = useNavigate();
   const { rowId } = React.useContext(postContext);
-  const { allposts, city, standard, subjects } = React.useContext(DataContext);
+  const { allposts, city, standards, subjects } = React.useContext(DataContext);
   const matchPost = allposts.find(({ _id }) => _id === rowId);
   const [posttoEdit, setPosttoEdit] = useState(matchPost);
   const handleUpdation = async () => {
@@ -26,7 +26,7 @@ const EditDetailsPost = () => {
       const {
         subject,
         city,
-        standard,
+        standards,
         prefmode,
         email,
         contactno,
@@ -39,7 +39,7 @@ const EditDetailsPost = () => {
         id: rowId,
         subject,
         city,
-        standard,
+        standards,
         prefmode,
         email,
         contactno,
@@ -194,7 +194,7 @@ const EditDetailsPost = () => {
                 margin: 10,
               }}
             >
-              {standard.map((e) => (
+              {standards.map((e) => (
                 <MenuItem value={e}>{e}</MenuItem>
               ))}
             </Select>

@@ -6,11 +6,11 @@ import { ListItem, ListItemText} from "@mui/material";
 import DeleteStandDialog from "./deleteStandDialog";
 
 export default function ListStand() {
-  const { standard } = React.useContext(DataContext);
+  const { standards } = React.useContext(DataContext);
 
   return (
     <ImageList sx={{ width: "100%", height: 150 }} cols={1}>
-      {standard.map((item, i) => (
+      {standards.map((item, i) => (
         <ImageListItem>
           <ListItem>
             <span

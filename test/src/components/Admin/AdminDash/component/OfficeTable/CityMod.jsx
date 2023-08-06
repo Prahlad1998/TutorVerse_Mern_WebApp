@@ -43,7 +43,8 @@ const CityMod = () => {
     <>
       <Grid container width="100%" sx={{
         background:'rgb(11, 102, 106)',
-        borderRadius:1
+        borderRadius:1,
+        paddingRight:2
       }}>
         <Grid
           item

@@ -238,12 +238,11 @@ const Office = () => {
                   color: 'rgba(255,255,255)',
                   background: 'rgb(11, 102, 106)'
                 }}>Subjects</Button></> : <><Button onClick={handleChangeStepSubject} size="large" >Subjects</Button></>)}
- {(step === 'standard' ? <><Button onClick={handleChangeStepStandard} size="large" style={{
-                  color: 'rgba(255,255,255)',
-                  background: 'rgb(11, 102, 106)'
-                }}>Standard</Button></> : <><Button onClick={handleChangeStepStandard} size="large" >Standard</Button></>)}
+              {(step === 'standard' ? <><Button onClick={handleChangeStepStandard} size="large" style={{
+                color: 'rgba(255,255,255)',
+                background: 'rgb(11, 102, 106)'
+              }}>Standard</Button></> : <><Button onClick={handleChangeStepStandard} size="large" >Standard</Button></>)}
 
-              
             </Stack>
           </Box>
         </Grid>
