@@ -31,7 +31,7 @@ const MatchedTuition = () => {
       console.log(error);
     }
   };
-  temFunc.current=MatchedTuition;
+  temFunc.current=findTuitions;
 
   useEffect(() => {
     temFunc.current();
