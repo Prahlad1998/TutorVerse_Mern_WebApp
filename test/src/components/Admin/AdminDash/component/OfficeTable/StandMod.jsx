@@ -14,7 +14,7 @@ import ListStand from "./ListStand";
 const StandMod = () => {
   const navigate=useNavigate();
   const [addstand, setAddstand] = useState("");
-  const { standards } = useContext(DataContext);
+  const { standard } = useContext(DataContext);
   const handleAddStand=async ()=>{
     if(addstand===''){
       return toast.error('Required filled is Empty');
@@ -80,7 +80,7 @@ const StandMod = () => {
           <Typography variant="h6" style={{ color: "rgb(53, 162, 159)" }}>
             Total Standards
             <Typography variant="h2" style={{ color: "rgb(11, 102, 106)" }}>
-              {standards.length}
+              {standard.length}
             </Typography>
           </Typography>
         </Grid>

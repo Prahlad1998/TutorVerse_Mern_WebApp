@@ -54,14 +54,13 @@ const columns = [
     renderCell: (params) => <ActionsPost rowId={params.id} />,
   },
 ];
-// var filteredpost={};
 
 const FilterTable = () => {
   const [filterCity, setFilterCity] = useState("");
   const [filterSubject, setFilterSubject] = useState("");
   const [filterStandard, setFilterstandard] = useState("");
   const [finalfilteredpost,setFinalFilteredpost]=useState({});
-  const { allposts, city, standards, subjects } = useContext(DataContext);
+  const { allposts, city, standard, subjects } = useContext(DataContext);
 
 
   const getDateOfCreation = (str) => {
@@ -149,7 +148,7 @@ const FilterTable = () => {
               }}
             >
               <MenuItem value="">None</MenuItem>
-              {standards.map((e) => (
+              {standard.map((e) => (
                 <MenuItem value={e}>{e}</MenuItem>
               ))}
             </Select>

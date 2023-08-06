@@ -35,7 +35,7 @@ const AdminDash = () => {
   //Declare the Empty array
   let city=[];
   let subjects=[];
-  let standards=[];
+  let standard=[];
 
   const getAllstudents = async () => {
     try {
@@ -161,7 +161,7 @@ const AdminDash = () => {
 
   Object.values(allSub).map(e=>subjects.push(e.name));
 
-  Object.values(allStand).map(e=>standards.push(e.name));
+  Object.values(allStand).map(e=>standard.push(e.name));
   return (
     <>
       <DataContext.Provider
@@ -174,7 +174,7 @@ const AdminDash = () => {
           alltutors,
           setAllposts,
           setAlltutors,
-          standards,
+          standard,
           allStand,
           subjects,
           allSub,
